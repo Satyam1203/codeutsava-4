@@ -1,0 +1,32 @@
+#CONNECTION
+
+$dsn = 'mysql:host=localhost;dbname=codenit';
+$pdo = new PDO($dsn,'root','');
+$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+
+$sql = 'INSERT into faculty values(?,?,?,?,?)';
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$name,$phone,$branch,$add,$pwd]);
+
+#SELECT 
+
+$row = $stmt->fetchAll(); or fetch()
+foreach($row as $r){
+    echo "<br>";
+    echo "
+        <tr>
+            <td>$r->name</td>
+            <td>$r->phone</td>
+            <td>$r->branch</td>
+            <td>$r->address</td>
+            <td><a href='edit.php/?id=$r->phone'>Edit</a></td>
+            <td><a href='delete.php/?id=$r->phone'>Delete</a></td>
+        </tr>
+    ";
+}
+
+
+#INSERT or DELETE
+
+$stmt->rowCount()
