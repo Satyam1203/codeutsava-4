@@ -2,7 +2,7 @@
 /**
 * import checksum generation utility
 */
-require_once("PaytmKit/lib/encdec_paytm.php");
+require_once("../PaytmKit/lib/encdec_paytm.php");
 
 $paytmChecksum = "";
 
@@ -10,6 +10,7 @@ $paytmChecksum = "";
 $paytmParams = array();
 foreach($_POST as $key => $value){
 	if($key == "CHECKSUMHASH"){
+		echo "<script>alert($key -> $value)</script>";
 		$paytmChecksum = $value;
 	} else {
 		$paytmParams[$key] = $value;

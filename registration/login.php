@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Login Page</title>
 </head>
 <body>
-    <div id="form">
+    <div class="form form_login">
         <form action="" method="POST">
-            <div>
-                <label>Username</label>
+        <div class="formIcon"></div>
+        <h1 class="formh1">Login</h1>
+            <div class="inputs">
+                <div>Username</div>
                 <input type="text" name="user" required>
             </div>
-            <div>
-                <label>Password</label>
-                <input type="text" name="pwd" required>
+            <div class="inputs">
+                <div>Password</div>
+                <input type="password" name="pwd" required>
             </div>
-            <button type="submit">Log In</button>
+            <button class="formButton" type="submit">Log In</button>
+            <div class="signUpBlock">
+                <div>New user SignUp Here
+                    <a href="http://localhost/codeutsava-4/registration/customerSignup.php">Customer SignUp</a>
+                    <a href="http://localhost/codeutsava-4/registration/farmerSignup.php">Farmer SignUp</a>
+                </div>
+            </div>
         </form>
     </div>
     <?php
@@ -46,7 +57,9 @@
                     }else if($user[0]=='w'){
                         echo "Warehouse";
                      }else if($user[0]=='c'){
-                        echo "Customer";
+                        session_start();
+                        $_SESSION['customer']=$user;
+                        header("location:../customer/products.php");
                     }else{
                         echo "Something went wrong. ☹ "; 
                     }

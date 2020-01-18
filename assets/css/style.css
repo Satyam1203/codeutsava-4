@@ -24,6 +24,7 @@
   margin: 10px;
   cursor: pointer;
   color: black;
+  text-decoration: none;
 }
 
 .links:hover {
@@ -31,7 +32,7 @@
 }
 
 .icon {
-  background-image: url(../img/farmer.png);
+  background-image: url("../img/farmer.png");
   background-size: 110%;
   background-position: 1px;
   margin: 10%;
@@ -63,7 +64,8 @@
 
 .fruitAdvertisementFilter,
 .vegetablesAdvertisementFilter,
-.vegetablesAdvertisement, .fruitAdvertisement {
+.grainsAdvertisementFilter,
+.vegetablesAdvertisement, .fruitAdvertisement, .grainsAdvertisement {
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -82,6 +84,10 @@
   background-image: url(../img/fruits.jpg);
 }
 
+.grainsAdvertisementFilter {
+  background-image: url(../img/grains.jpg);
+}
+
 .intialAdvertisementContainer {
   position: relative;
   left: -10vw;
@@ -94,14 +100,20 @@
   0% {
     left: 0vw;
   }
-  40% {
+  30% {
     left: 0vw;
   }
-  50% {
+  33.3% {
     left: -100vw;
   }
-  90% {
+  63% {
     left: -100vw;
+  }
+  66.6% {
+    left: -200vw;
+  }
+  97% {
+    left: -200vw;
   }
   100% {
     left: 0vw;
@@ -140,7 +152,7 @@
 }
 
 .vegetableListContainer {
-  height: 30vh;
+  height: calc(30vh + 20px);
   overflow: hidden;
   overflow-x: scroll;
   padding: 10px;
@@ -228,7 +240,7 @@ footer {
   height: 30vh;
   display: grid;
   grid-template-columns: 30vh auto 200px;
-  background-color: darkorange;
+  background-color: grey;
   color: white;
 }
 
@@ -243,6 +255,9 @@ footer {
 .footerLinks {
   display: block;
   color: white;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  padding-left: 14px;
 }
 
 .footerMenu {
@@ -256,7 +271,8 @@ footer {
 }
 
 .brinjal {
-  background-image: url("https://cdn1.iconfinder.com/data/icons/fruits-vegetables-vol-1/512/6_Coloredbeans_eggplant-512.png");
+  background-size: 100%;
+  background-image: url("https://i.guim.co.uk/img/media/d9e401a06fb8e32dbeee5cd3d057cd575ad342d9/106_0_1667_1000/1667.jpg?width=300&quality=85&auto=format&fit=max&s=ef381338499d3b3534382cf0a3db9a55");
 }
 
 .cauliflower {
@@ -276,7 +292,7 @@ footer {
 }
 
 .parsley {
-  background-image: url("https://cdn2.iconfinder.com/data/icons/simple-flat-vegetable/512/vegetable-16-512.png");
+  background-image: url("https://images.assetsdelivery.com/compings_v2/jemastock/jemastock1712/jemastock171208388.jpg");
 }
 
 .onion {
@@ -304,7 +320,7 @@ footer {
 }
 
 .bannana {
-  background-image: url("https://img.favpng.com/14/9/10/banana-icon-png-favpng-CnJprsXV7XyfiD7nXCjChLCEq.jpg");
+  background-image: url("https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/banana.png");
 }
 
 .papaya {
@@ -328,10 +344,10 @@ footer {
 }
 
 .cherry {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYxCKPF4F3OCax8-Shw9G2i7r8iPPUOoW27HRIdYqMAJx49eMnhA&s");
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/71Wc8TvucBL._SL1500_.jpg");
 }
 
-.kiwwi {
+.kiwi {
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9PVV9cHW08mbPPBckasKSpkWekC2H1zmgo5LWEua1NCCRZSUaMw&s");
 }
 
@@ -344,6 +360,133 @@ footer {
   text-align: center;
   background: white;
   padding: 3px;
+}
+
+.form_login {
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("../img/formBg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+form {
+  padding: 10px;
+  box-shadow: 0 1px 20px -4px;
+  border-radius: 20px;
+  margin: 10px;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.formh1 {
+  margin: 10px;
+  color: darkcyan;
+  text-align: center;
+  font-size: 40px;
+}
+
+p {
+  text-align: center;
+  padding: 5px;
+}
+
+.inputs {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.inputs > div {
+  padding-right: 20px;
+  margin-top: 3px;
+  color: darkcyan;
+  margin-left: 15px;
+}
+
+textarea {
+  resize: vertical;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px dashed darkcyan;
+}
+
+.formIcon {
+  background-image: url("../img/farmer.png");
+  background-size: 110%;
+  background-position: 1px;
+  margin: 10%;
+  border-radius: 50%;
+  border: 1px solid;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px dashed darkcyan;
+  width: 100%;
+}
+
+.formButton {
+  padding: 6px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: darkcyan;
+  color: white;
+  width: 100px;
+  margin: auto;
+  margin-top: 15px;
+  margin-right: 10px;
+  float: right;
+}
+
+.cartContainer {
+  padding: 10px;
+  display: grid;
+  width: min-content;
+  margin: auto;
+  grid-template-columns: 200px 200px 200px 200px;
+}
+
+.productContainer {
+  margin: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px -4px;
+  transition: 500ms;
+}
+
+.productContainer:hover {
+  box-shadow: 0 0 10px 0px;
+}
+
+.productImg {
+  background-position: center;
+  background-size: cover;
+  height: 100px;
+}
+
+.description {
+  margin: 10px;
+}
+
+.cartButton {
+  height: 30px;
+  font-size: 13px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.signUpBlock {
+  margin-top: 60px;
+  padding: 17px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -375,6 +518,15 @@ footer {
   .footerMenu {
     display: block;
     margin-left: 10px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .cartContainer {
+    width: 100%;
+    grid-template-columns: 50% 50%;
   }
 }
 

@@ -4,51 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Farmer Signup</h1>
-    <div id='form'>
-        <form  action='' method='POST' onsubmit="return checkPassword()" >
-         <div>
-             <label>Name</label>
+    <div class="form form_login">
+        
+    <form  action='' method='POST' onsubmit="return checkPassword()" >
+        <div class="formIcon"></div>
+        <h1 class="formh1">Farmer Signup</h1>
+         <div class="inputs">
+             <div>Name</div>
              <input required  type='text' name='fName'  id=''>
         </div>
-        <div>
-            <label>Email</label>
+        <div class="inputs">
+            <div>Email</div>
             <input  required type='email' name='fEmail'  id=''>
        </div>
-       <div>
-        <label>Address</label>
-        <input required     type='text' name='fAddress'  id=''>
+       <div class="inputs">
+            <div>Address</div>
+            <input required     type='text' name='fAddress'  id=''>
         </div>
-       <div>
-        <label>Contact Number</label>
-        <input  required type='text' name='fContact' id=''>
+       <div class="inputs">
+            <div>Contact Number</div>
+            <input  required type='text' name='fContact' id=''>
         </div>
-        <div>
-        <label>UPI ID</label>
+            <div class="inputs">
+            <div>UPI ID</div>
         <input  required  type='text' name='fUpi' id=''>
         </div>
-        <div>
-        <label>Name OF the Bank</label>
-        <input required type='text' name='fBank'  id=''>
+        <div class="inputs">
+            <div>Name OF the Bank</div>
+            <input required type='text' name='fBank'  id=''>
         </div>
-        <div>
-        <label>Account Number</label>
-        <input   required  type='text' name='fAccount'   id=''>
+        <div class="inputs">
+            <div>Account Number</div>
+            <input   required  type='text' name='fAccount'   id=''>
         </div>
-        <div>
-            <label>Password</label>
+        <div class="inputs">
+            <div>Password</div>
             <input required  type='password' name='password1'   id='password1'>
         </div>
-        <div>
-            <label>Confirm Password</label>
+        <div class="inputs">
+            <div>Confirm Password</div>
             <input required  type='password' name='password2'  id='password2'>
         </div>
         
-        <input type="submit" value="Signup" />
-
+        <input class="formButton" type="submit" value="Signup" />
+        <div class="signUpBlock">
+            <div>Don't want farmer Signup
+                <a href="http://localhost/codeutsava-4/registration/customerSignup.php">Customer SignUp</a>
+                Already have an account
+                <a href="http://localhost/codeutsava-4/registration/login.php">Login</a>
+            </div>
+        </div>
         </form>
     </div> 
 <script>
