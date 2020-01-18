@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./login.css">
+=======
+    <link rel="stylesheet" href="../assets/css/style.css">
+>>>>>>> 4feb575e57fe02a3a5f880d2bf7cf488e9511634
     <title>Login Page</title>
 </head>
 <body>
-    <div id="form">
+    <div class="form form_login">
         <form action="" method="POST">
-            <div>
-                <label>Username</label>
+        <div class="formIcon"></div>
+        <h1 class="formh1">Login</h1>
+            <div class="inputs">
+                <div>Username</div>
                 <input type="text" name="user" required>
             </div>
-            <div>
-                <label>Password</label>
-                <input type="text" name="pwd" required>
+            <div class="inputs">
+                <div>Password</div>
+                <input type="password" name="pwd" required>
             </div>
-            <button type="submit">Log In</button>
+            <button class="formButton" type="submit">Log In</button>
         </form>
     </div>
     <?php
