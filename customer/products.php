@@ -1,4 +1,25 @@
+<?php
+session_start();
+if(isset($_SESSION['customer']))
+{    
+   echo"<script>var temp=1 ;</script>"  ;     
+}
+else{
+    echo"<script>var temp=0 ;</script>";
+}
+?>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 <?php 
+
     $dsn = 'mysql:host=localhost;dbname=codeutsava';
     $pdo = new PDO($dsn,'root','');
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
@@ -32,11 +53,37 @@
     }
 ?>
 
+<div class="container">
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Cart</button>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Your Cart</h4>
+        </div>
+        <div class="modal-body">
+          <div id='cart'></div>
+        </div>
+        <div class="modal-footer">
+            <h3 id='price'></h3>
+          <a type="button" class="btn btn-default" >Check Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <script>
     let purchasedProduct=[];
     let addItem = (productId,name,price)=>{
         let c=0;
-        console.log(name);
+        if(temp===1){
+              
         for (i of purchasedProduct){
             if(i.id==productId){
                 i.qty += 1;
@@ -53,5 +100,22 @@
             purchasedProduct.push(purchasedItem);
         }
         console.log(purchasedProduct);
+        var totalPrice=0;
+        var htmlTags='<table border=2><tr><td> ID</td><td> Name</td><td>Price /Kg</td><td>Quantity</td></tr>'
+        for(var i=0;i<purchasedProduct.length;++i)
+        {
+           htmlTags+=`<tr><td>${purchasedProduct[i].id}</td><td>${purchasedProduct[i].name}</td><td>${purchasedProduct[i].price}</td><td>${purchasedProduct[i].qty}</td></tr>`
+           totalPrice=totalPrice+parseInt(purchasedProduct[i].price)*parseInt(purchasedProduct[i].qty);
+        }
+        htmlTags+='</table>';
+        document.getElementById('cart').innerHTML=htmlTags;
+        document.getElementById('price').innerHTML=`Total Price ${totalPrice}`;
+        }
+        else{
+                window.location='../registration/login.php'
+        }
     };
 </script>
+
+</body>
+</html>
