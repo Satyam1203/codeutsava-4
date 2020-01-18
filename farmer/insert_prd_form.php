@@ -33,10 +33,10 @@
                    
             	</select>
     <tr/> 
-    <td id="row"/> Rate
+    <td id="row"/> Rate(per kg. or dozens)
      : <td id="text"/> <input type="number" name="rate">
     <tr/> 
-    <td id="row"/> Quantity
+    <td id="row"/> Quantity(in kg. or dozens)
      : <td id="text"/> <input type="number" name="qty">
     <tr/>
     <td colspan="3" align="center"/> <input type="submit" value="submit">

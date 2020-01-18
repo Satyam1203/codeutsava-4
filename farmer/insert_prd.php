@@ -6,7 +6,7 @@
 	session_start();
 	$n=$_SESSION['farmer'];
 	
-	$query = "insert into product_detail(catId,pRate,qty,wId,fId) values('$catId','$rate','$qty','1','$n')";
+	$query = "insert into product_detail(catId,pRate,qty,remQty,wId,fId) values('$catId','$rate','$qty','$qty','1','$n')";
 	
 	mysqli_query($con,$query);
 
