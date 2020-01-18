@@ -1,0 +1,96 @@
+*
+    margin:0
+    padding:0
+    box-sizing: border-box
+.header
+    height: 10vh
+    box-shadow: 0 -7px 15px 4px
+    display: grid   
+    grid-template-columns: 10vh auto auto
+    padding-left:10px
+    position: relative
+    z-index: 1
+.menu
+    margin: auto
+    margin-right:10px
+.links
+    margin:10px
+    cursor: pointer
+    color: black
+.links:hover
+    color: blue
+.icon
+    background-image: url(../img/farmer.png)
+    background-size: 110%
+    background-position: 1px
+    margin: 10%
+    border-radius: 50%
+    border: 1px solid
+.icon:hover
+    filter: brightness(1.2)
+.intialAdvertisement
+    height:60vh
+    overflow: hidden
+.fruitAdvertisement
+    background-image: url(../img/fruits.jpg)
+.vegetablesAdvertisement
+    background-image: url(../img/vegetables.jpg)
+    position: relative
+    left: -4px
+ 
+.vegetablesAdvertisement, .fruitAdvertisement
+    background-size: cover
+    background-position: center
+    height: 100%
+    display: inline-flex
+    width: 100vw
+    align-items: center
+    justify-content: center
+.intialAdvertisementContainer
+    position: relative
+    left: -10vw
+    width: max-content
+    height: inherit
+    animation: intialAdvertisement 9s ease-in-out 0s infinite
+@keyframes intialAdvertisement
+    0%
+        left: 0vw
+    40%
+        left: 0vw
+    50%
+        left: -100vw
+    90%
+        left: -100vw
+    100%
+        left: 0vw
+.title
+    width: 100%
+    font-size: 40px
+    padding: 50px
+    color: white
+    font-weight: bold
+    text-shadow: 0 0 10px black
+    cursor: pointer
+.companyName
+    margin: auto
+    margin-left: 10px
+    line-height: 4vh
+.titleContainer
+    display: grid
+    overflow: hidden
+    grid-template-columns: auto
+    position: relative
+    height: 4vh
+    width: 100%
+    margin: auto
+.scrollContainer
+    transition: 1s ease-in-out
+.vegetableListContainer
+    height: 30vh
+    width: 100vw
+    overflow: hidden
+    padding: 10px
+.vegetableListBox
+    display: inline-block
+    width: calc(30vh - 20px)
+    border: 1px solid block
