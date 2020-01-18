@@ -1,12 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-=======
     session_start();
     if(!(isset($_SESSION['farmer']))){
         header("location:../registration/login.php");
     }
->>>>>>> 1dce51f04604a073814a21af44996bc182bb17ba
 	// if($_REQUEST['ok'] == 1)
 	// {
 	// 	echo "<h1 style='color:green'> Successfully added </h1>";
