@@ -16,16 +16,18 @@
         $stmt->execute([$prod_id]);
         $prod=$stmt->fetch();
 
-        echo "
-            <div>
-                
-                <img src='$prod->catImg' width='100px' height='80px' />
-                <div>
-                    <p>$r->pName</p>
-                    <p>$r->pRate</p>
+        if($r->remQty>0){
+            echo "
+                <div style='border:1px solid grey;border-radius:5px;margin:50px;display:inline-block;'>
+                    
+                    <img src='$prod->catImg' width='100px' height='80px' />
+                    <div>
+                        <p>$prod->catName</p>
+                        <p>$r->pRate</p>
+                    </div>
+                    <button>Add to cart</button>
                 </div>
-                <button>Add to cart</button>
-            </div>
-        ";
+            ";
+        }
     }
 ?>

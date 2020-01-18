@@ -1,14 +1,18 @@
 <?php
 
-	if($_REQUEST['ok'] == 1)
-	{
-		echo "<h1 style='color:green'> Successfully added </h1>";
-	}
+    session_start();
+    if(!(isset($_SESSION['farmer']))){
+        header("location:../registration/login.php");
+    }
+	// if($_REQUEST['ok'] == 1)
+	// {
+	// 	echo "<h1 style='color:green'> Successfully added </h1>";
+	// }
 ?>
 	<h1> Farmer adds product to the warehouse </h1>
     
-    <a href="show_prd_farm.php"> Show Product Listing available in warehouse </a>
-    
+    <a href="show_prd_farm.php"> Show Products available in warehouse </a>
+    <br/><br/>
     <form method="post" action="insert_prd.php" name="f1">
     
     <table>

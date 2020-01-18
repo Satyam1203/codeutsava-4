@@ -1,8 +1,18 @@
 <?php
-		if($_REQUEST['deleted'] == 1 )
-		{
-			echo "<h1 style='color:red'> Successfully deleted </h1>";
-		}
+	session_start();
+	if(!(isset($_SESSION['farmer']))){
+		header("location:../registration/login.php");
+	}
+?>
+
+
+<a href="insert_prd.php">Add farm produce</a>
+
+<?php
+		// if($_REQUEST['deleted'] == 1 )
+		// {
+		// 	echo "<h1 style='color:red'> Successfully deleted </h1>";
+		// }
 	
 		include('connect.php');
 		$query = "select * from product_detail,category_detail where category_detail.deleted=0 and product_detail.deleted=0 and fId=1 and product_detail.catId= category_detail.catId";
