@@ -1,6 +1,6 @@
 #CONNECTION
 
-$dsn = 'mysql:host=localhost;dbname=codenit';
+$dsn = 'mysql:host=localhost;dbname=codeutsava';
 $pdo = new PDO($dsn,'root','');
 $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
 

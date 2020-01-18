@@ -57,12 +57,10 @@
         let password2=document.getElementById('password2').value
          if(password1 !== password2)
          {
-            alert("Your passwords Donot match");
-           return false
+            return false
          }
          else{
-			alert("Your passwords matched Successfully");
-             return true
+            return true
          }
 
     }
