@@ -1,5 +1,12 @@
 <?php
 
+<<<<<<< HEAD
+=======
+    session_start();
+    if(!(isset($_SESSION['farmer']))){
+        header("location:../registration/login.php");
+    }
+>>>>>>> 1dce51f04604a073814a21af44996bc182bb17ba
 	// if($_REQUEST['ok'] == 1)
 	// {
 	// 	echo "<h1 style='color:green'> Successfully added </h1>";
@@ -7,8 +14,8 @@
 ?>
 	<h1> Farmer adds product to the warehouse </h1>
     
-    <a href="show_prd_farm.php"> Show Product Listing available in warehouse </a>
-    
+    <a href="show_prd_farm.php"> Show Products available in warehouse </a>
+    <br/><br/>
     <form method="post" action="insert_prd.php" name="f1">
     
     <table>
