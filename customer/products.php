@@ -1,16 +1,16 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>Products</title>
 </head>
 <body>
-<!-- header -->
-
 <header class="header">
         <div class="icon"></div>
         <div class="titleContainer">
@@ -36,8 +36,6 @@
         </div>
 </header>
 
-<!-- header ends -->
-=======
 <?php
 session_start();
 if(isset($_SESSION['customer']))
@@ -53,17 +51,6 @@ else{
     echo"<script>var temp=0 ;</script>";
 }
 ?>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
->>>>>>> 3dc59ce16a9118c0542b3a38c27e695135eaa302
 <?php 
 
     $dsn = 'mysql:host=localhost;dbname=codeutsava';
@@ -99,11 +86,6 @@ else{
     }
     echo "</div>";
 ?>
-<<<<<<< HEAD
- <?php 
-        require_once('../assets/partials/footer.php');
-    ?>
-=======
 
 <div class="container">
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Cart</button>
@@ -126,11 +108,12 @@ else{
   </div>
 </div>
 
+<?php 
+        require_once('../assets/partials/footer.php');
+?>
 
 
 
-
->>>>>>> 3dc59ce16a9118c0542b3a38c27e695135eaa302
 <script>
     let purchasedProduct=[],totalPrice;
     let addItem = (productId,name,price)=>{
@@ -168,9 +151,6 @@ else{
                 window.location='../registration/login.php'
         }
     };
-
-<<<<<<< HEAD
-// menu logic
 
     var div2 = `<div class="companyName">Farm to your Home</div>`;
     var div1 = `<div class="companyName">Local Farm</div>`;
@@ -210,14 +190,11 @@ function openMenu() {
         mobileMenu.marginTop = "-400px"
     }
 }
-</script>
-=======
+
     let payPage = ()=>{
         let url = '../payment/payment_setup.php?amt='+totalPrice+'&cust_id='+cust_id;
         window.location=url;
     }
 </script>
-
->>>>>>> 3dc59ce16a9118c0542b3a38c27e695135eaa302
 </body>
 </html>
