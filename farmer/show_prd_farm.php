@@ -15,7 +15,9 @@
 		// }
 	
 		include('connect.php');
-		$query = "select * from product_detail,category_detail where category_detail.deleted=0 and product_detail.deleted=0 and fId=1 and product_detail.catId= category_detail.catId";
+		$farmer=$_SESSION['farmer'];
+
+		$query = "select * from product_detail,category_detail where category_detail.deleted=0 and product_detail.deleted=0 and fId='$farmer' and product_detail.catId= category_detail.catId";
 		$rs_product = mysqli_query($con,$query);
 		
 		
