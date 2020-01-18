@@ -21,6 +21,12 @@
                 <input type="password" name="pwd" required>
             </div>
             <button class="formButton" type="submit">Log In</button>
+            <div class="signUpBlock">
+                <div>New user SignUp Here
+                    <a href="http://localhost/codeutsava-4/registration/customerSignup.php">Customer SignUp</a>
+                    <a href="http://localhost/codeutsava-4/registration/farmerSignup.php">Farmer SignUp</a>
+                </div>
+            </div>
         </form>
     </div>
     <?php

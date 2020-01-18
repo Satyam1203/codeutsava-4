@@ -18,6 +18,7 @@
     margin:10px
     cursor: pointer
     color: black
+    text-decoration: none
 .links:hover
     color: blue
 .icon
@@ -106,7 +107,7 @@
 .scrollContainer
     transition: 1s ease-in-out
 .vegetableListContainer
-    height: 30vh
+    height: calc(30vh + 20px)
     overflow: hidden
     overflow-x: scroll
     padding: 10px
@@ -185,6 +186,9 @@ footer
 .footerLinks
     display: block
     color: white
+    background: rgba(0,0,0,0.1)
+    padding: 5px
+    padding-left: 14px
 .footerMenu
     margin: auto
     width: -webkit-fill-available
@@ -251,15 +255,21 @@ footer
     align-items: center 
     justify-content: center 
     min-height: 100vh
+    background-image: url('../img/formBg.jpg')
+    background-position: center
+    background-size: cover
+    background-attachment: fixed
+
 form  
     padding: 10px 
     box-shadow: 0 1px 20px -4px 
     border-radius: 20px 
     margin: 10px 
+    width: 40%
+    background-color: rgba(255,255,255,0.8)
  
 .formh1  
     margin: 10px 
-    margin-bottom: 25px 
     color: darkcyan 
     text-align: center 	
     font-size: 40px
@@ -308,12 +318,38 @@ input
     color: white 
     width: 100px 
     margin: auto 
-    margin-right: 0px 
+    margin-top: 15px
+    margin-right: 10px 
     float: right 
- 
-@media only screen and (max-width:800px)
-    form
-        width: 90%
+//  cart
+.cartContainer
+    padding: 10px
+    display: grid
+    width: min-content
+    margin: auto
+    grid-template-columns: 200px 200px 200px 200px  
+.productContainer
+    margin: 10px   
+    border-radius: 20px
+    overflow: hidden
+    box-shadow: 0 0 10px -4px
+    transition: 500ms
+.productContainer:hover
+    transform: scale(1.1)
+.productImg
+    background-position: center
+    background-size: cover
+    height: 100px
+.description
+    margin: 10px
+.cartButton
+    height: 30px
+    font-size: 13px
+    margin-right: 10px
+    margin-bottom: 10px
+.signUpBlock
+    margin-top: 60px
+    padding: 17px
 @media only screen and (max-width: 800px)
     .menu
         display: none
@@ -333,3 +369,8 @@ input
     .footerMenu
         display: block
         margin-left: 10px
+    form
+        width: 90%
+    .cartContainer
+        width: 100%
+        grid-template-columns: 50% 50%   

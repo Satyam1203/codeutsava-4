@@ -51,7 +51,13 @@
         </div>
         
         <input class="formButton" type="submit" value="Signup" />
-
+        <div class="signUpBlock">
+            <div>Don't want farmer Signup
+                <a href="http://localhost/codeutsava-4/registration/customerSignup.php">Customer SignUp</a>
+                Already have an account
+                <a href="http://localhost/codeutsava-4/registration/login.php">Login</a>
+            </div>
+        </div>
         </form>
     </div> 
 <script>
