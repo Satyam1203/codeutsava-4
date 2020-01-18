@@ -122,4 +122,39 @@
   transition: 1s ease-in-out;
 }
 
+.vegetableListContainer {
+  height: 30vh;
+  width: 100vw;
+  overflow: hidden;
+  overflow-x: scroll;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.vegetableListScroll {
+  width: max-content;
+}
+
+.vegetableListBox {
+  display: inline-block;
+  width: calc(30vh - 20px);
+  height: calc(30vh - 20px);
+  box-shadow: 2px 2px 10px -4px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.vegetableListContainer::-webkit-scrollbar {
+  height: 5px;
+}
+
+.vegetableListContainer::-webkit-scrollbar-track {
+  height: 5px;
+}
+
+.vegetableListContainer::-webkit-scrollbar-thumb {
+  background: black;
+  height: 5px;
+}
+
 /*# sourceMappingURL=style.css.map */
