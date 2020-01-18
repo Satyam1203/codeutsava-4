@@ -25,9 +25,33 @@
                         <p>$prod->catName</p>
                         <p>$r->pRate</p>
                     </div>
-                    <button>Add to cart</button>
+                    <button onclick='addItem($r->pId,`$prod->catName`,$r->pRate)'>Add to cart</button>
                 </div>
             ";
         }
     }
 ?>
+
+<script>
+    let purchasedProduct=[];
+    let addItem = (productId,name,price)=>{
+        let c=0;
+        console.log(name);
+        for (i of purchasedProduct){
+            if(i.id==productId){
+                i.qty += 1;
+                c=1;
+            }
+        }
+        if(!c){
+            let purchasedItem={
+                id:productId,
+                name:name,
+                price:price,
+                qty:1   
+            }
+            purchasedProduct.push(purchasedItem);
+        }
+        console.log(purchasedProduct);
+    };
+</script>
