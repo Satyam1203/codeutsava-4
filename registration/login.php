@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Login Page</title>
 </head>
 <body>
-    <div id="form">
+    <div class="form form_login">
         <form action="" method="POST">
-            <div>
-                <label>Username</label>
+        <div class="formIcon"></div>
+        <h1 class="formh1">Login</h1>
+            <div class="inputs">
+                <div>Username</div>
                 <input type="text" name="user" required>
             </div>
-            <div>
-                <label>Password</label>
+            <div class="inputs">
+                <div>Password</div>
                 <input type="text" name="pwd" required>
             </div>
-            <button type="submit">Log In</button>
+            <button class="formButton" type="submit">Log In</button>
         </form>
     </div>
     <?php

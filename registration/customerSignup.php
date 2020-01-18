@@ -1,66 +1,48 @@
 <!DOCTYPE html>
-<html>
-<head><title>COSTUMER FORM</title></head>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
+	<title>Registration</title>
+</head>
 <body>
-	<style type="text/css">
-	
-#form_login {
-	border:none;
-    left: 50%;
-    top: 50%;
-    margin-left: -13%;
-    position: absolute;
-    margin-top: -20%;
+    <div class="form form_login">
+        <form>       
+        <div class="formIcon"></div>
 
-}
-
-	</style>
-	    <form id="form_login" method='POST' onsubmit='return checkPassword()'>
-	<div>
-       
-		<h1>Costumer Registration </h1>
-		<p>Please fill this form to create an account </p>
-		<div>
-     		First name:<input type="text" placeholder="  Enter first name  " name="cName" required><br><br>
-     	</div>
-	    <div>
-	     Contact Number:<input type="tel" name="cContact" placeholder=" Enter Mobile no  " pattern="[0-9]{10}" required><br><br>
-	    </div>
-        <div>
-	        Email id  :<input type="Email" placeholder=" Enter valid Email " required  name="cEmail"><br><br>
-	    </div>
-	    <div> 
-	  		Password  :<input type ="password" placeholder=" Enter password " name="password1" required><br><br>
-	    </div> 
-	    <div>		
-	    	Repeat Password:<input type ="password" placeholder="  repeat password " name="password2" required><br><br>
-	    </div> 
-	    <div>
-	        Address   :<textarea rows="2" cols="20" placeholder="  Enter Address " name='cAddress' required></textarea><br><br>
-	    </div> 
-	    
-        <div>
-             <button type="submit">Register</button>
+        <h1 class="formh1">Costumer Registration </h1>
+        <p>Please fill this form to create an account </p>
+        <div class="inputs">
+            <div>First name </div><input type="text" placeholder="  Enter first name  " name="firstname" required> 
         </div>
-    </div>
-	</form>
-	<script>
-
-    function checkPassword(){
-        let password1=document.getElementById('password1').value
-        let password2=document.getElementById('password2').value
-         if(password1 !== password2)
-         {
-			 alert("Your passwords Donot match");
-           return false
-         }
-         else{
-			alert("Your passwords matched Successfully");
-             return true
-         }
-
-    }
-</script>
+        <div class="inputs">	
+                <div>Last name  </div><input type="text" placeholder="  Enter last name " name="lastname" required> 
+        </div>
+        <div class="inputs">
+            <div>Phone  </div><input type="tel" name="phone" placeholder=" Enter Mobile no  " pattern="[0-9]{10}" required> 
+        </div>
+        <div class="inputs">
+            <div>Email id   </div><input type="email" placeholder=" Enter valid Email " name ="Email"> 
+        </div>
+        <div class="inputs"> 
+            <div>Password   </div><input type ="password" placeholder=" Enter password " name="psw" required> 
+        </div> 
+        <div class="inputs">		
+            <div>Confirm Password </div><input type ="password" placeholder="  repeat password " name="psw-repeat" required> 
+        </div> 
+        <div class="inputs">
+            <div>Address </div><textarea rows="2" cols="20" placeholder="  Enter Address " required></textarea> 
+        </div> 
+        <div class="inputs">    
+            <div>Pincode    </div><input type="tel" name="pin" placeholder="  Enter Pincode " pattern="[0-9]{6}" required> 
+        </div>     
+        <div class="inputs">
+            <button class="formButton" type="submit">Register</button>
+        </div>
+    </form>
+</div>	 
 </body>
 </html>
 

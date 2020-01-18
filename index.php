@@ -8,35 +8,20 @@
     <title>Local Farm</title>
 </head>
 <body>
-    <header class="header">
-        <div class="icon"></div>
-        <div class="titleContainer">
-            <div class="scrollContainer">
-                <div class="companyName">Local Farm</div>
-                <div class="companyName">Farm to your Home</div>
-            </div>
-        </div>
-        <div class="menu">
-            <a href="" class="links">Home</a>
-            <a href="" class="links">Cart</a>
-            <a href="" class="links">Ware Houses</a>
-            <a href="farmer/show_prd_farm.php" class="links">Farmers</a>
-            <a href="registration/login.php" class="links">Login</a>
-        </div>
-        <div class="menuBars" onclick="openMenu()"></div>
-        <div class="mobileMenu">
-            <a href="/" class="mobileLinks">Home</a>
-            <a href="/" class="mobileLinks">Cart</a>
-            <a href="/" class="mobileLinks">Ware Houses</a>
-            <a href="farmer/show_prd_farm.php" class="mobileLinks">Farmers</a>
-            <a href="registration/login.php" class="mobileLinks">Login</a>
-        </div>
-    </header>
+    <!-- header -->
+    <?php 
+        require_once('assets/partials/header.php');
+    ?>
+
     <div class="intialAdvertisement">
         <div class="intialAdvertisementContainer">
             <div class="fruitAdvertisement">
                 <div class="bgImgFilter fruitAdvertisementFilter"></div>
                 <div class="title">Buy Fruits at best price</div>
+            </div>
+            <div class="grainsAdvertisement">
+                <div class="bgImgFilter grainsAdvertisementFilter"></div>
+                <div class="title">Buy grains at best price</div>
             </div>
             <div class="vegetablesAdvertisement">
                 <div class="bgImgFilter vegetablesAdvertisementFilter"></div>
@@ -104,30 +89,20 @@
             <div class="vegetableListBox grape">
                 <div class="name">grape</div>
             </div>
-            <div class="vegetableListBox chery">
-                <div class="name">chery</div>
+            <div class="vegetableListBox cherry">
+                <div class="name">cherry</div>
             </div>
-            <div class="vegetableListBox kiwwi">
-                <div class="name">kiwwi</div>
+            <div class="vegetableListBox kiwi">
+                <div class="name">kiwi</div>
             </div>
             <div class="vegetableListBox sitafal">
                 <div class="name">sitafal</div>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="icon footerIcon"></div>
-        <div class="social">
-        In order to alleviate the crisis on farming fronts, it is necessary that we should think about and debate the mechanisms by which farmers are adequately compensated for their labor.
-        </div>
-        <div class="menu footerMenu">
-            <span class="links footerLinks">Home</span>
-            <span class="links footerLinks">Cart</span>
-            <span class="links footerLinks">Ware Houses</span>
-            <span class="links footerLinks">Farmers</span>
-            <span class="links footerLinks">Login</span>
-        </div>
-    </footer>
+    <?php 
+        require_once('assets/partials/footer.php');
+    ?>
     <script>
             var div2 = `<div class="companyName">Farm to your Home</div>`;
             var div1 = `<div class="companyName">Local Farm</div>`;
