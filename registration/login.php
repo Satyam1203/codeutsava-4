@@ -40,7 +40,9 @@
                 if($row->pass==$pwd){
                     echo "logged in";
                     if($user[0]=='f'){
-                        echo "Farmer";
+                        session_start();
+                        $_SESSION['farmer']=$user;
+                        header("location:../farmer/show_prd_farm.php");
                     }else if($user[0]=='w'){
                         echo "Warehouse";
                      }else if($user[0]=='c'){

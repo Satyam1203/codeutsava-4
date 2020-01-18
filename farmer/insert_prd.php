@@ -3,8 +3,10 @@
 	$catId = $_REQUEST['catId'];
 	$rate=$_REQUEST['rate'];
 	$qty=$_REQUEST['qty'];
+	session_start();
+	$n=$_SESSION['farmer'];
 	
-	$query = "insert into product_detail(catId,pRate,qty,wId,fId) values('$catId','$rate','$qty','1','1')";
+	$query = "insert into product_detail(catId,pRate,qty,wId,fId) values('$catId','$rate','$qty','1','$n')";
 	
 	mysqli_query($con,$query);
 
