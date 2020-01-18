@@ -1,9 +1,9 @@
 <?php
 
-	if($_REQUEST['ok'] == 1)
-	{
-		echo "<h1 style='color:green'> Successfully added </h1>";
-	}
+	// if($_REQUEST['ok'] == 1)
+	// {
+	// 	echo "<h1 style='color:green'> Successfully added </h1>";
+	// }
 ?>
 	<h1> Farmer adds product to the warehouse </h1>
     
