@@ -18,7 +18,7 @@
             </div>
             <div class="inputs">
                 <div>Password</div>
-                <input type="text" name="pwd" required>
+                <input type="password" name="pwd" required>
             </div>
             <button class="formButton" type="submit">Log In</button>
         </form>

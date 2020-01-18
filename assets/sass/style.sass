@@ -44,8 +44,8 @@
      opacity: 0.9
 .fruitAdvertisementFilter,
 .vegetablesAdvertisementFilter, 
-.grainsAdvertisementFilter
-.vegetablesAdvertisement, .fruitAdvertisement
+.grainsAdvertisementFilter,
+.vegetablesAdvertisement, .fruitAdvertisement, .grainsAdvertisement
     background-size: cover
     background-position: center
     height: 100%
@@ -58,6 +58,8 @@
     background-image: url(../img/vegetables.jpg)
 .fruitAdvertisementFilter
     background-image: url(../img/fruits.jpg)
+.grainsAdvertisementFilter
+    background-image: url(../img/grains.jpg)
 .intialAdvertisementContainer
     position: relative
     left: -10vw
@@ -67,12 +69,16 @@
 @keyframes intialAdvertisement
     0%
         left: 0vw
-    40%
+    30%
         left: 0vw
-    50%
+    33.3%
         left: -100vw
-    90%
+    63%
         left: -100vw
+    66.6%
+        left: -200vw
+    97%
+        left: -200vw
     100%
         left: 0vw
 .title
