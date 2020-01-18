@@ -2,7 +2,12 @@
 session_start();
 if(isset($_SESSION['customer']))
 {    
-   echo"<script>var temp=1 ;</script>"  ;     
+   echo "
+        <script>
+            var temp=1 ;
+            var cust_id=`$_SESSION[customer]`;
+        </script>
+   "; 
 }
 else{
     echo"<script>var temp=0 ;</script>";
@@ -67,7 +72,7 @@ else{
         </div>
         <div class="modal-footer">
             <h3 id='price'></h3>
-          <a type="button" class="btn btn-default" >Check Out</a>
+          <a type="button" onclick="payPage()" class="btn btn-default" >Check Out</a>
         </div>
       </div>
     </div>
@@ -79,7 +84,7 @@ else{
 
 
 <script>
-    let purchasedProduct=[];
+    let purchasedProduct=[],totalPrice;
     let addItem = (productId,name,price)=>{
         let c=0;
         if(temp===1){
@@ -100,8 +105,8 @@ else{
             purchasedProduct.push(purchasedItem);
         }
         console.log(purchasedProduct);
-        var totalPrice=0;
-        var htmlTags='<table border=2><tr><td> ID</td><td> Name</td><td>Price /Kg</td><td>Quantity</td></tr>'
+        totalPrice=0;
+        var htmlTags='<table border=2><tr><td>ID</td><td> Name</td><td>Price /Kg</td><td>Quantity</td></tr>'
         for(var i=0;i<purchasedProduct.length;++i)
         {
            htmlTags+=`<tr><td>${purchasedProduct[i].id}</td><td>${purchasedProduct[i].name}</td><td>${purchasedProduct[i].price}</td><td>${purchasedProduct[i].qty}</td></tr>`
@@ -115,6 +120,11 @@ else{
                 window.location='../registration/login.php'
         }
     };
+
+    let payPage = ()=>{
+        let url = '../payment/payment_setup.php?amt='+totalPrice+'&cust_id='+cust_id;
+        window.location=url;
+    }
 </script>
 
 </body>

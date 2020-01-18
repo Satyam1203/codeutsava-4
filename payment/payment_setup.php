@@ -3,7 +3,17 @@
 * import checksum generation utility
 * You can get this utility from https://developer.paytm.com/docs/checksum/
 */
-require_once("PaytmKit/lib/encdec_paytm.php");
+if(!(isset($_REQUEST['amt'])) or !(isset($_REQUEST['cust_id']))){
+	echo "<p>You don't have permission to access this page.</p>";
+	echo "<a href='../index.php'>Go back</a>";
+}
+
+$amt=$_REQUEST['amt'];
+$cust_id=$_REQUEST['cust_id'];
+$order_id=$cust_id.rand(0,99999);
+
+require_once("../PaytmKit/lib/encdec_paytm.php");
+
 /* initialize an array with request parameters */
 $paytmParams = array(
     
@@ -20,25 +30,25 @@ $paytmParams = array(
 	"CHANNEL_ID" => "WEB",
     
 	/* Enter your unique order id */
-	"ORDER_ID" => "FC03",
+	"ORDER_ID" => $order_id,
     
 	/* unique id that belongs to your customer */
-	"CUST_ID" => "CUSTOMER_01",
+	"CUST_ID" => $cust_id,
     
 	/* customer's mobile number */
-	"MOBILE_NO" => "xx",
+	"MOBILE_NO" => "",
     
 	/* customer's email */
-	"EMAIL" => "CUSTOMER_EMAIL",
+	"EMAIL" => "",
     
 	/**
 	* Amount in INR that is payble by customer
 	* this should be numeric with optionally having two decimal points
 	*/
-	"TXN_AMOUNT" => "10.0",
+	"TXN_AMOUNT" => (int)($amt),
     
 	/* on completion of transaction, we will send you the response on this URL */
-    "CALLBACK_URL" => "http://127.0.0.1/files/codeutsava4/resp.php",
+    "CALLBACK_URL" => "http://127.0.0.1/files/codeutsava4/payment/resp.php",
 );
 
 /**
