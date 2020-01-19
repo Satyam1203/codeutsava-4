@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    <?php 
+        require_once('../assets/partials/header.php');
+    ?>
     <div class="form form_login">
         
     <form  action='' method='POST' onsubmit="return checkPassword()" >

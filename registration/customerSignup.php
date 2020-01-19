@@ -8,6 +8,9 @@
 	<title>Registration</title>
 </head>
 <body>
+    <?php 
+        require_once('../assets/partials/header.php');
+    ?>
     <div class="form form_login">
         <form>       
         <div class="formIcon"></div>

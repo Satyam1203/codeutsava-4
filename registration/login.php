@@ -11,6 +11,9 @@
     <title>Login Page</title>
 </head>
 <body>
+    <?php 
+        require_once('../assets/partials/header.php');
+    ?>
     <div class="form form_login">
         <form action="" method="POST">
         <div class="formIcon"></div>

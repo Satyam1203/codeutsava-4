@@ -2,6 +2,7 @@
     margin:0
     padding:0
     box-sizing: border-box
+    outline: none
 .header
     height: 10vh
     box-shadow: 0 -7px 15px 4px
@@ -345,11 +346,107 @@ input
 .cartButton
     height: 30px
     font-size: 13px
-    margin-right: 10px
+    margin: auto
     margin-bottom: 10px
+    margin-top: 10px
+    width: 30px
+    border-radius: 50%
+    font-size: 30px
+    text-align: center
+    padding: 0
+    font-weight: bold
+.cartButton > span
+    position: relative
+    top: -8.5px
 .signUpBlock
     margin-top: 60px
     padding: 17px
+// dashboard
+.dashBoard
+    width: 98%
+    box-shadow: 0 0 10px -2px
+    margin: 20px auto
+    padding: 10px
+.leftDesign, .rightDesign
+    border: 2px solid transparent
+    border-bottom: 2px solid grey
+    height: 150px
+    display: grid
+    grid-template-columns: 150px auto
+
+.image
+    height: 100%
+    background-position: center
+    background-size: 60%
+    background-repeat: no-repeat
+.description
+    text-align: center
+    margin: auto
+.products > .image
+    background-image: url(../img/product-icon.png)
+.newUpload > .image
+    background-image: url(../img/upload.png)
+.wareHouses > .image
+    background-image: url(../img/warehouse.png)
+.addProducts
+    display: grid
+    height: 70px
+    grid-template-columns: 50px auto
+    width: max-content
+    margin: auto
+    padding: 10px
+    border-radius: 20px
+.addProducts:hover
+    background-color: #dbe9f1
+
+.addProducts > .addText
+    text-align: center
+    margin: auto
+.addIcon
+    background-image: url(../img/add.png)
+// table
+.columns
+    display: grid
+    grid-template-columns: 5% 20% 10% 10% 10% 10% 25% 10%
+    margin: 10px
+    border-bottom: 2px dashed blue
+    padding: 10px
+    text-align: center
+.table
+    margin: 30px
+
+// add products
+.addProductForm
+    margin: 50px auto
+.addProductsContainer
+    padding: 10px
+.linkToDashboard
+    padding: 20px
+    font-size: 24px
+    margin-top: 32px
+    display: block
+    background-color: #f5f4d9
+.fields
+    padding: 20px
+.insertText
+    padding: 2px
+    margin-left: 10px
+select
+    width: 100%
+    height: 36px
+    border-radius: 30px
+.h1Bg
+    background-color: #f5f4d9
+    margin: 0
+.addToCartContainer
+    display: grid
+    grid-template-columns: auto auto auto
+.productCount
+    text-align: center
+    display: flex
+.productCount > span
+    margin: auto
+    display: block
 @media only screen and (max-width: 800px)
     .menu
         display: none
