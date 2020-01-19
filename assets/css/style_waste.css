@@ -1,0 +1,10 @@
+.footer{
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+.jumbotron{
+	padding: 30px;
+	background-image: url("https://images.unsplash.com/photo-1526951521990-620dc14c214b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+	background-size: cover;
+	max-height: 400px;
+}
