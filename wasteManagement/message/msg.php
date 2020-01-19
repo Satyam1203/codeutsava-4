@@ -21,7 +21,11 @@ $gType = $_REQUEST['type'];
 $query = "insert into msg_detail(senderContact,ward,street,city,district,pincode,type) values($Scontact,$wardNo,'$streetNo','$City','$District',$pincodeNo,'$gType')";
 
 $res=mysqli_query($con,$query) or die("query error");
-header("location:add_msg.php?deleted=0")
+
+echo "<script> alert('Thank You for your message');
+	window.location='add_msg.php';</script>";
+
+//header("location:add_msg.php")
 
 #echo "hello";
 #if($res){

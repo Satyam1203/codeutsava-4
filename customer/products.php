@@ -54,7 +54,7 @@ else{
 <?php 
 
     $dsn = 'mysql:host=localhost;dbname=codeutsava';
-    $pdo = new PDO($dsn,'root','');
+    $pdo = new PDO($dsn,'root','diksha123');
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
 
     $sql = 'SELECT * from product_detail';

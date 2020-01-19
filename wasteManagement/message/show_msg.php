@@ -1,24 +1,30 @@
 <?php
 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-<h3>Detail of the Garbage</h3>
+  include("../header.php");
 
+?>
+
+<style>
+  .main{
+    padding: 30px;
+  }
+  .title{
+    text-align: center;
+    margin-top:30px;
+  }
+  .done{
+    color: white;
+  }
+  .done:hover{
+    color: white;
+    text-decoration: none;
+  }
+</style>
+
+<h3 class="title">All messages about garbage</h3>
 
 <?php
 
-
-if(isset($_REQUEST['deleted']) && $_REQUEST['deleted']==1)
-            {
-                  echo '<div class="msgBox">';
-                  echo "<h4>Delete sucessfully.</h4>";
-                  echo '</div>';
-            }
 $con = mysqli_connect("localhost","root","") or die("connection error");
 
 mysqli_select_db($con,"waste_management") or die("seletion error");
@@ -28,14 +34,17 @@ $query = "select msgId,senderContact,type,ward,street,pincode from msg_detail wh
 
 $result = mysqli_query($con,$query);
 
-echo "<table border='1'>";
+echo "<div class='main'>";
+
+echo "<table border='0' class='table table-striped'>";
 echo "<tr>
-      <th>ID</th>
-      <th>contact number</th>
+      <th scope='col'>Sr No.</th>
+      <th>Sender Contact </th>
       <th>Garbage Type</th>
       <th>Ward Number</th>
-      <th>Street Number</th>
+      <th>Street</th>
       <th>Pincode</th>
+      <th>Status</th>
       </tr>";
       while($row = mysqli_fetch_array($result))
       {
@@ -51,12 +60,14 @@ echo "<tr>
         <td>".$gType."</td>
         <td>".$wardNo."</td>  
         <td>".$streetNo."</td>
-        <td>".$pincodeNo."</td> 
-        <td><a href='del_msg.php?msgId=".$gId."'>Delete</a></td>
+        <td>".$pincodeNo."</td>
+        <td><button class='btn btn-info'><a href='del_msg.php?msgId=".$gId."' class='done'><b>Completed?</b></a> </button> </td>
            
        
        </tr>";
       }
+  echo "</div>";
+    ?>
   </body>
 </html>
 
