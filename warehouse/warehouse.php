@@ -25,6 +25,7 @@
 		.form_ware input{
 			border:1px solid grey;
 			border-radius:6px;
+			text-align: center;
 		} 
 		form{
 			padding:50px;	
@@ -73,7 +74,7 @@
 			<div class="form-group"><label> Email<br/><input type="text" name="wEmail"></label></div>
 			<div class="form-group"><label>Password<br/><input type="password" name="password"></label></div>
 			<div> <button class="btn" type="submit">Submit</button></div>
-		 <a href='./show_contact.php'>show</a>
+			<a href="./visualize.php">Visualize existing items in Warehouse</a>
 		</form>
 	</div>
 </body>

@@ -6,9 +6,8 @@
 	
 	$query = "insert into municipal(mName,mContact,mPincode) values('$name','$contact','$pin')";
 	
-	mysqli_query($con,$query);
-
-	//echo $_REQUEST['rate'];
-
-	header("location:insert_municipal.php?ok=1");
+	if( mysqli_query($con,$query)){
+		echo "<script>alert('Records Updated');</script>";
+		header("location:insert_municipal.php?ok=1");
+	}
 ?>

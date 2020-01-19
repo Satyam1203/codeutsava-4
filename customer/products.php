@@ -174,12 +174,13 @@ else{
         for(var i=0;i<purchasedProduct.length;++i)
         {
            htmlTags+=`<tr><td>${purchasedProduct[i].id}</td><td>${purchasedProduct[i].name}</td><td>${purchasedProduct[i].price}</td><td>${purchasedProduct[i].qty}</td></tr>`
-           totalPrice=totalPrice+parseInt(purchasedProduct[i].price)*parseInt(purchasedProduct[i].qty);
+           totalPrice=totalPrice+(parseInt(purchasedProduct[i].price) * 1.05)*parseInt(purchasedProduct[i].qty);
         }
         htmlTags+='</table>';
         document.getElementById('cart').innerHTML=htmlTags;
         document.getElementById('price').innerHTML=`Total Price ${totalPrice}`;
     }
+
     var div2 = `<div class="companyName">Farm to your Home</div>`;
     var div1 = `<div class="companyName">Local Farm</div>`;
     var titleContainer = document.querySelector('.scrollContainer');
@@ -206,25 +207,23 @@ else{
         }
         
     }, 5000);
-function openMenu() {
-    var mobileMenu = document.querySelector('.mobileMenu').style;
-    console.log(mobileMenu)
-    if(
-        mobileMenu.marginTop == "-400px"
-        || mobileMenu.marginTop == ""
-        || mobileMenu.marginTop == "none") {
-            mobileMenu.marginTop = "10vh"
-    } else {
-        mobileMenu.marginTop = "-400px"
-    }
+    function openMenu() {
+        var mobileMenu = document.querySelector('.mobileMenu').style;
+        console.log(mobileMenu)
+        if(
+            mobileMenu.marginTop == "-400px"
+            || mobileMenu.marginTop == ""
+            || mobileMenu.marginTop == "none") {
+                mobileMenu.marginTop = "10vh"
+        } else {
+            mobileMenu.marginTop = "-400px"
+        }
 }
 
     let payPage = ()=>{
         let url = '../payment/payment_setup.php?amt='+totalPrice+'&cust_id='+cust_id;
         window.location=url;
     }
-</script>
-<script>
     
     function remove(id) {
         var ele = document.querySelector("#id"+id+" span")
