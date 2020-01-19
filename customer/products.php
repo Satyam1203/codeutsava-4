@@ -29,10 +29,10 @@
         <div class="menuBars" onclick="openMenu()"></div>
         <div class="mobileMenu">
             <a href="http://localhost/codeutsava-4/index.php" class="mobileLinks">Home</a>
-            <a href="/" class="mobileLinks">Products </a>
+            <a href="http://localhost/codeutsava-4/customer/products.php" class="mobileLinks">Products </a>
             <a href="/" class="mobileLinks">Ware Houses</a>
-            <a href="farmer/show_prd_farm.php" class="mobileLinks">Farmers</a>
-            <a href="registration/login.php" class="mobileLinks">Login</a>
+            <a href="http://localhost/codeutsava-4/farmer/show_prd_farm.php" class="mobileLinks">Farmers</a>
+            <a href="http://localhost/codeutsava-4/registration/login.php" class="mobileLinks">Login</a>
         </div>
 </header>
 
@@ -79,7 +79,11 @@ else{
                         <div>$prod->catName</div>
                         <div>$r->pRate</div>
                     </div>
-                    <button class='formButton cartButton' onclick='addItem($r->pId,`$prod->catName`,$r->pRate)'>Add to cart</button>
+                    <div class='addToCartContainer'>
+                        <button class='formButton cartButton' onclick='removeItem($r->pId,`$prod->catName`,$r->pRate)''><span>-</span></button>
+                        <div class='productCount' id='id$r->pId'><span>0</span></div>
+                        <button class='formButton cartButton' onclick='addItem($r->pId,`$prod->catName`,$r->pRate)'><span>+</span></button>
+                    </div>
                 </div>
             ";
         }
@@ -115,8 +119,9 @@ else{
 
 
 <script>
-    let purchasedProduct=[],totalPrice;
+    let purchasedProduct=[],totalPrice=0;
     let addItem = (productId,name,price)=>{
+        add(productId);
         let c=0;
         if(temp===1){
               
@@ -135,8 +140,36 @@ else{
             }
             purchasedProduct.push(purchasedItem);
         }
+        calcPrice();
+
+        }
+        else{
+                window.location='../registration/login.php'
+        }
+    };
+
+    let removeItem = (productId,name,price)=>{
+        remove(productId);
+        if(temp===1){
+              
+        for (i of purchasedProduct){
+            if(i.id==productId){
+                if(i.qty>0){
+                    i.qty -= 1;
+                }
+            }
+        }
+        
+        calcPrice();
+        }
+        else{
+                window.location='../registration/login.php'
+        }
+    };
+
+    function calcPrice() {
         console.log(purchasedProduct);
-        totalPrice=0;
+        totalPrice = 0;
         var htmlTags='<table border=2><tr><td>ID</td><td> Name</td><td>Price /Kg</td><td>Quantity</td></tr>'
         for(var i=0;i<purchasedProduct.length;++i)
         {
@@ -146,12 +179,7 @@ else{
         htmlTags+='</table>';
         document.getElementById('cart').innerHTML=htmlTags;
         document.getElementById('price').innerHTML=`Total Price ${totalPrice}`;
-        }
-        else{
-                window.location='../registration/login.php'
-        }
-    };
-
+    }
     var div2 = `<div class="companyName">Farm to your Home</div>`;
     var div1 = `<div class="companyName">Local Farm</div>`;
     var titleContainer = document.querySelector('.scrollContainer');
@@ -194,6 +222,21 @@ function openMenu() {
     let payPage = ()=>{
         let url = '../payment/payment_setup.php?amt='+totalPrice+'&cust_id='+cust_id;
         window.location=url;
+    }
+</script>
+<script>
+    
+    function remove(id) {
+        var ele = document.querySelector("#id"+id+" span")
+        let x = parseInt(ele.textContent) - 1;
+        if(x < 0)
+            x = 0;
+        ele.innerHTML = x
+    }
+    function add(id) {
+        var ele = document.querySelector("#id"+id+" span")
+        let x = parseInt(ele.textContent) + 1;
+        ele.innerHTML = x;
     }
 </script>
 </body>
