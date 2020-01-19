@@ -50,11 +50,18 @@
 	$query = "select * from product_detail,category_detail where category_detail.deleted=0 and product_detail.deleted=0 and fId='$farmer' and product_detail.catId= category_detail.catId";
 	$rs_product = mysqli_query($con,$query);
 	
+
 	
 	echo '<div class="table"></div>';
 	$temp = 0;
 	echo'<div class="columns"><div>Sno.</div><div>Product Name</div> <div> Price</div><div> Quantity </div><div> Sold Quantity </div><div> Remaining Quantity
 	</div><div> Time of Order</div><div>Delete </div></div>';
+
+		include('connect.php');
+		$farmer=$_SESSION['farmer'];
+
+		$query = "select * from product_detail,category_detail where category_detail.deleted=0 and product_detail.deleted=0 and fId='$farmer' and product_detail.catId= category_detail.catId";
+		$rs_product = mysqli_query($con,$query);
 
 	while($row_product = mysqli_fetch_array($rs_product))
 	{

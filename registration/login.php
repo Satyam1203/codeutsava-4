@@ -59,6 +59,9 @@
                         header("location:../farmer/show_prd_farm.php");
                     }else if($user[0]=='w'){
                         echo "Warehouse";
+                        session_start();
+                        $_SESSION['warehouse']=$user;
+                        header("location:../warehouse/show_contact.php");
                      }else if($user[0]=='c'){
                         session_start();
                         $_SESSION['customer']=$user;
