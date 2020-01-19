@@ -10,7 +10,6 @@ $paytmChecksum = "";
 $paytmParams = array();
 foreach($_POST as $key => $value){
 	if($key == "CHECKSUMHASH"){
-		echo "<script>alert($key -> $value)</script>";
 		$paytmChecksum = $value;
 	} else {
 		$paytmParams[$key] = $value;
@@ -23,7 +22,17 @@ foreach($_POST as $key => $value){
 */
 $isValidChecksum = verifychecksum_e($paytmParams, "OiE7EE3r_3NTz34A", $paytmChecksum);
 if($isValidChecksum == "TRUE") {
-	echo "Checksum Matched";
+	echo "
+		<div>
+			<h3>Payment Successful</h3>
+		</div>
+	";
+	foreach($_POST as $key => $value){
+		if($key=='MID' || $key=='CHECKSUMHASH'){ }
+		else{
+			echo "<p>$key - $value</p>";
+		}
+	}
 } else {
 	echo "Checksum Mismatched";
 }

@@ -66,8 +66,11 @@ echo "<tr>
        
        </tr>";
       }
+
   echo "</div>";
     ?>
+      ?>
+
   </body>
 </html>
 

@@ -53,7 +53,7 @@
             </div>
       </header>
       <div class="show_ware">
-            <h3>Details of the warehouse</h3>
+            <h3>Details of the warehouses</h3>
             <?php
             if(isset($_REQUEST['deleted']) && $_REQUEST['deleted']==1)
             {
@@ -100,6 +100,8 @@
             echo "</table>";
             
             ?>
+            
+			<a href="./visualize.php">Visualize existing items in Warehouse</a>
       </div>
 </body>
 </html>
